@@ -1,0 +1,1195 @@
+---
+title: "Pink Floyd Fish"
+output: html_document
+date: "2023-05-22"
+---
+
+```{r}
+# Clear environment
+rm(list=ls()) 
+
+# Load necessary libraries
+library(tidyverse)
+```
+
+# Koi Space
+
+```{r}
+# Create a blank canvas with specified axis limits
+plot_space <- ggplot() +
+  theme_void() +
+  coord_cartesian(xlim = c(-15, 15), ylim = c(-15, 15)) #+
+#  theme(panel.background = element_rect(fill = "black"))
+```
+
+
+```{r}
+
+# Add the function to the canvas
+plot2_space <- plot_space +
+  stat_function(
+    fun = function(x) sqrt(2 * x * 11 + 34),
+    xlim = c(0.146, 0.34),
+    ylim = c(0, -9),
+    color = "#E5E3C5",
+ #   geom = "area",
+#    fill = "red",
+    alpha = 0.3
+  )+
+  stat_function(
+    fun = function(x) -0.9 * x + 6.75,
+    xlim = c(-0.7, 0.34),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  )  +
+  stat_function(
+    fun = function(x) 0.3 * x + 7.59,
+    xlim = c(-0.7, 0.36),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  )  +
+  stat_function(
+    fun = function(y) 9,
+    xlim = c(1.5, -0.61),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) x+7.5,
+    xlim = c(0.4, 1.5),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(y) 6.1,
+    xlim = c(0.146, -1),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -0.2*x + 5.6,
+    xlim = c(-2.61, -1.6),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 0.3 * x + 6.4,
+    xlim = c(-1.6, -1),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 5 * x + 21.7,
+    xlim = c(-3.5335, -3.2754),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 1.2 * x + 9.25,
+    xlim = c(-3.278, -2.607),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -5.5 * x - 15.4,
+    xlim = c(-3.5334, -2.8),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -2.59 * x - 7.25,
+    xlim = c(-2.8, -2.24),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) sqrt(3 * x * 6 + 127),
+    ylim = c(0, 6.35),
+    xlim = c(-7.055,-4.89),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -sqrt(3 * x * 11 + 233),
+    ylim = c(-7.5, 0.1),
+    xlim = c(-7.055, -5.41),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 0.8 * x + 10.2,
+    ylim = c(6.35, 7.23),
+    xlim = c(-4.8, -3.8), 
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 0.5 * x + 9.08,
+    ylim = c(7.2, 7.71),
+    xlim = c(-3.8,-2.8),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 0.9 * x + 10.2,
+    ylim = c(7.68, 8.2),
+    xlim = c(-2.8, -2.25),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 0.5 * x + 9.3,
+    ylim = c(8.15, 9),
+    xlim = c(-2.25, -0.6),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+ # stat_function(
+#    fun = function(x) -6,
+#    xlim = c(-2.05, -2.03),
+#    ylim = c(-6, -4.1),
+#    color = "black"
+#  ) +
+ # geom_vline(xintercept = -2.04, ymin = -6, ymax = -4.1, color = "black") +
+  geom_segment(aes(x = -2.04, y = -6, xend = -2.04, yend = -4.1), color = "#E5E3C5",
+    alpha = 0.3) +
+  stat_function(
+    fun = function(x) 5 * x + 5.9,
+    xlim = c(0.36, 0.4),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -1.4 + 1.5 * x,
+    ylim = c(-3.69, -2.4),
+    xlim = c(-1.5, -0.67),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -4.1 - 2.5 * x,
+    ylim = c(-2.43, -1.57),
+    xlim = c(-1, -0.67),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+ #   size = 1.5
+  ) +
+  stat_function(
+    fun = function(x) -(-15.2 - x) / (-9),
+    xlim = c(-2.25, -1),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -(-16.6 - x) / (-1.5),
+    ylim = c(-7.9, -7.49),
+    xlim = c(-5.359, -4.825),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) (2.89 - x) / (-1.2),
+    xlim = c(-2.02, -1.513),
+    ylim = c(-4.11, -3.66),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) (-14 - x) / (3),
+    xlim = c(-8.26, -6.89),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) (-5.2-x)/ (-1.6),
+    ylim = c(-2.7, -1.93),
+    xlim = c(-9.47,-8.26),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) (-25.5 - x) / (4),
+    xlim = c(-8.22, -6.35),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+#  stat_function(
+#    fun = function(y) -9.5,
+#    ylim = c(-3.5, -2.688),
+#    color = "lightblue"
+#  ) +
+  geom_segment(aes(x = -9.5, y = -2.7, xend = -9.5, yend = -3.45), color = "#E5E3C5",
+    alpha = 0.3) +
+  stat_function(
+    fun = function(x) (-14.7 - x) / (1.5),
+    xlim = c(-9.5, -8.2),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -1,
+    xlim = c(-7.48, -7.03),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -x - 8.43,
+    xlim = c(-8.2, -7.43),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -(x + 8.1) / -0.3,
+    xlim = c(-8.18, -7.78),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) sqrt(0.55^2 + (-x + 2.5)^2) - 6.3,
+    xlim = c(-3, -2.33),
+    ylim = c(-7, -5),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) (x + 12) / 4,
+    xlim = c(-7.8, -6.96),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -sqrt(1 - ((x + 3.7)^2 / 1.2)^2) - 8,
+    xlim = c(-4.83, -2.8),
+    ylim = c(-15, -8),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 6 * x + 8.2,
+    xlim = c(-2.82, -2.69),
+    ylim = c(-8.673, -8),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 6 * x + 20.6,
+    xlim = c(-8.35, -7.89),
+    ylim = c(-4.825, -2.75),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 8 * x + 11.8,
+    ylim = c(-7.36, -6.5),
+    xlim = c(-2.4, -2.33),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) -sqrt((x+0.77)/-0.03),
+    ylim = c(-8.033, -7.34),
+    xlim = c(-2.7, -2.4),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(y) -12 * x - 28.4,
+    ylim = c(-4.1, -1.4),
+    xlim = c(-2.248, -2.025),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) 1.5 * x + 10,
+    ylim = c(6.1, 7.1),
+    xlim = c(-2.58, -1.96),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+  stat_function(
+    fun = function(x) sqrt(0.6^2 - (x + 2.53)^2) + 7.2,
+    xlim = c(-2.7, 15),
+    ylim = c(7.08, 7.8),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  ) +
+   stat_function(
+    fun = function(x) sqrt((x + 3.7)^2 / 1.2^2 - 64) - 8,
+    xlim = c(-7.5, 0),
+    ylim = c(-15, 0),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.3
+  )
+
+# Display the canvas with the function
+print(plot2_space)
+```
+
+```{r}
+# Shading
+shade1 <- data.frame(
+  x = c(-6.828, -6.89, -8.27, -9.5, -9.5, -8.5, -8, -7.2),
+  y = c(-2.84, -2.37, -1.9, -2.69, -3.46, -3.1, -2.7, -2.68)
+)
+
+shade2 <- data.frame(
+  x = c(-2.17, -1.6, -1.6, -1, -0.7, -1, -2.25),
+  y = c(-2.3, -2.1, -2.3, -2.9, -2.4, -1.6, -1.45)
+)
+
+shade3 <- data.frame(
+  x = c(-7.75, -8.15, -7.5, -7.05, -7),
+  y = c(1.05, -0.25, -0.15, -1, 1.2)
+)
+
+shade_tail <- data.frame(
+  x = c(0.15, 0.33, -0.7, 0.3, 0.35, 1.5, -0.6, -2.15, -1.9, -2.6, -1.5, -1),
+  y = c(6.12, 6.45, 7.4, 7.7, 7.86, 9, 9, 7.7, 7.2, 6.1, 5.93, 6.1)
+)
+
+shade_belly <- data.frame(
+  x = c(-3.5, -4.2, -5, -5.4, -5.56, -5.1, -5.2, -5.6, -5.3, -5.8, -5.8, -5, -4.2, -5, -4.9, -5.7, -6.56, -7.06, -6.989, -6.4, -5.6, -5.3, -4.8, -4.8, -4.7, -4.2, -3.8),
+  y = c(-8.95, -8.4, -7, -7, -6.6, -6, -5, -3.8, -3.5, -2.2, -0.8, 0, 1.2, 3.6, 6.2, 5, 3, 1, -2, -4.8, -7, -7.6, -7.8, -8.3, -8.6, -8.9, -9)
+)
+
+shade4 <- data.frame(
+  x = c(-6.969, -7.17, -7.5, -7, -7.06),
+  y = c(1.25, 1.2, 0, -1, 0)
+)
+
+shade_tail2 <- data.frame(
+  x = c(1.5, -0.1, 0.7, 0.1, 0.1, -1.3, -0.8, -1.3, -0.7, -1.2, -0.6, -0.8, -0.5, 0.15, .31, -0.61, 0.35, 0.47),
+  y = c(9, 9, 8.7, 8.2, 7.9, 7.4, 7.35, 7.15, 7.1, 6.9, 6.7, 6.5, 6.1, 6.1, 6.46, 7.35, 7.7, 8)
+)
+
+plot3_space <- plot2_space +
+  geom_polygon(
+    data = shade1,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.2,
+ #   color = "#202020"
+  )+
+  geom_polygon(
+    data = shade2,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.2,
+#    color = "#202020"
+  ) +
+  geom_polygon(
+    data = shade3,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.2,
+#    color = "#202020"
+  ) +
+  geom_polygon(
+    data = shade_tail,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.2,
+  #  color = "#202020"
+  )  +
+  geom_polygon(
+    data = shade_tail2,
+    aes(x = x, y = y),
+    fill = "#E5E3C5",
+    alpha = 0.25,
+  #  color = "#202020"
+  )  +
+  geom_polygon(
+    data = shade_belly,
+    aes(x = x, y = y),
+    fill = "#E5E3C5",
+    alpha = 0.25
+  ) +
+  geom_polygon(
+    data = shade4,
+    aes(x = x, y = y),
+    fill = "#E5E3C5",
+    alpha = 0.25,
+ #   color = "#202020"
+  ) 
+
+plot3_space
+```
+
+```{r}
+# Blobs
+red1 <- data.frame(
+  x = c(-3.2, -3.8, -4.2, -4.6, -4.5, -3.6, -2.95, -2.33, -2.04, -2.04, -2.8),
+  y = c(-4, -4, -4.45, -5.2, -6.8, -7.3, -7.4, -6.8, -5.99, -4.8, -4.18)
+)
+
+orange1 <- data.frame(
+  x = c(-6.4, -4.6, -3.4, -3.6, -3.1, -3.3, -3.1, -2.6, -2.8, -3.3, -3.15, -3.53, -4, -4.2, -4.7, -6, -6.3,-6.2,  -6.5, -7, -7, -6.6, -6.7, -6.4, -6.83),
+  y = c(-3.55, -3.3, -2, -1.8, -1.45, -1, -0.4, -0.5, 0, 1.6, 1.9, 4.05, 1.25, 1.2, 2.3, 2.9, 2.3, 2, 1.8, 1, -1.2, -1.2, -1.4, -1.6, -2.8)
+)
+
+red2 <- data.frame(
+  x = c(-2.6, -3.3, -3.15, -3.53, -4, -3.6),
+  y = c(-0.5, 1.6, 1.9, 4, 1.32, 0)
+)
+
+red3 <- data.frame(
+  x = c(-4.8, -4.3, -4.42, -4.4, -4.5, -4.4, -4.5, -4.8, -5.6, -5.6, -5.9, -6.3),
+  y = c(2.34, 3, 3.6, 4.1, 4.3, 5.3, 5.1, 5.3, 4.8, 4.3, 4.2, 3.2)
+)
+
+red4 <- data.frame(
+  x = c(-3.8, -4.3, -4.3, -3.9, -3.58, -3.5),
+  y = c(4, 4.4, 5, 5.8, 5, 4.5)
+)
+
+orange2 <- data.frame(
+  x = c(-3.65, -3.6, -3.3, -3.15, -2.6, -2.1, -2.33, -2.5, -2.75, -3.7, -4.6, -4, -3.3, -2.8),
+  y = c(6.3, 5.9, 5.6, 6, 6.5, 7.2, 7.68, 7.55, 7.69, 7.2, 6.5, 6.4, 7, 6.95)
+)
+
+
+plot4_space <- plot3_space +
+  geom_polygon(
+    data = red1,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+ #   color = "#660000"
+  ) +
+  geom_polygon(
+    data = orange1,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+  #  color = "#AB551C"
+  ) +
+  geom_polygon(
+    data = red2,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+   # color = "#660000"
+  ) +
+  geom_polygon(
+    data = red3,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+  #  color = "#660000"
+  ) +
+  geom_polygon(
+    data = red4,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+   # color = "#660000"
+  )+
+  geom_polygon(
+    data = orange2,
+    aes(x = x, y = y),
+    fill = "#DBB2C2",
+    alpha = 0.2,
+ #   color = "#D77331"
+  ) 
+
+plot4_space
+```
+
+```{r}
+# Eye
+plot5_space <- plot4_space +
+    stat_function(
+    fun = function(x) {
+      y <- -sqrt(0.3^2 - (x + 5.2)^2) - 6.7
+      return(y)
+    },
+    xlim = c(-10, 0),
+    ylim = c(-13.4, -0.4),
+    color = "#E5E3C5",
+    size = 0.9,
+    alpha = 0.8
+  ) 
+
+plot5_space
+```
+
+
+# Save Fishy Image
+```{r}
+ggsave("fish_space_transparent.png", bg = "transparent")
+
+fish_space <- image_read("fish_space_transparent.png")
+fish_space
+
+fish_space_2 <- image_flop(fish_space)
+fish_space_2 <- image_flip(fish_space_2)
+fish_space_2
+```
+
+
+# Space
+```{r}
+# Create a space background with specified axis limits
+sky <- tibble(x = seq(-15,15, length = 100),
+              y = seq(-15,15, length = 100)) |>
+  expand.grid() 
+
+#Setting a color palette for the sky in the background
+sky_pal <- sample(colorRampPalette(c(rep("#000000",3),rep("#1A0539",5), "#c66c92","#836193","#434a73","#439895","#046c8e",rep("#042047",3)))(nrow(sky)))
+sky_pal <- sample(colorRampPalette(c("#1A0539","#836193","#434a73","#046c8e", "#042047", "#042047", "black", "#22495C", "black", "black", "#046c8e","#046c8e"))(nrow(sky)))
+sky_size <- sample(15:35, nrow(sky), replace = TRUE)
+
+
+# Stars
+stars_grid <- tibble(expand.grid(x = seq(-15,15, length.out = 100),
+                                 y = seq(-15,15, length.out = 100))) 
+
+stars <- slice_sample(stars_grid, n = 200) |>
+  mutate(group = "stars")
+
+sky_texture <- sky |>
+  mutate(color = sky_pal,
+         size = sky_size,
+         group = "sky")
+
+plot_space <- ggplot() +
+  theme_void() +
+  coord_cartesian(xlim = c(-15, 15), ylim = c(-15, 15)) +
+  geom_point(data = sky_texture,
+             aes(x = x, y = y, group = group),  # Add x and y aesthetics here
+             color = sky_texture$color,
+             size = sky_texture$size,
+             alpha = .02) +
+  theme(panel.background = element_rect(fill = "black")) +
+  geom_point(data = stars,
+             aes(x = x, y = y),  # Add x and y aesthetics here
+             color = "#E5E3C5",
+             position = position_jitter(width = .05, height = .03),
+             alpha = sample(seq(.2, .9, length.out = 1000), nrow(stars), replace = TRUE),
+             size = sample(seq(.02, .2, length.out = 1000), nrow(stars), replace = TRUE))
+
+
+
+# Display the canvas
+print(plot_space)
+```
+
+```{r}
+ggdraw() +
+  draw_plot(plot_space) +
+  draw_image(fish_space) +
+  draw_image(fish_space_2)
+```
+
+```{r}
+ggsave("fish_space_final.png")
+```
+
+
+
+# Koi Water
+```{r}
+# Create a blank canvas with specified axis limits
+plot_white <- ggplot() +
+  theme_void() +
+  coord_cartesian(xlim = c(-15, 15), ylim = c(-15, 15))+
+  theme(panel.background = element_rect(fill = "#E4D1C4"))
+
+```
+
+# Koi Outline
+```{r}
+# Start building outline of koi
+
+# Add the function to the canvas
+plot2 <- plot_white +
+  stat_function(
+    fun = function(x) sqrt(2 * x * 11 + 34),
+    xlim = c(0.146, 0.34),
+    ylim = c(0, -9),
+ #   geom = "area",
+#    fill = "red",
+#    alpha = 0.3
+  )+
+  stat_function(
+    fun = function(x) -0.9 * x + 6.75,
+    xlim = c(-0.7, 0.34),
+    color = "#202020",
+    size = 0.9
+  )  +
+  stat_function(
+    fun = function(x) 0.3 * x + 7.59,
+    xlim = c(-0.7, 0.36),
+    color = "#202020",
+    size = 0.9
+  )  +
+  stat_function(
+    fun = function(y) 9,
+    xlim = c(1.5, -0.61),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) x+7.5,
+    xlim = c(0.4, 1.5),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(y) 6.1,
+    xlim = c(0.146, -1),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -0.2*x + 5.6,
+    xlim = c(-2.61, -1.6),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 0.3 * x + 6.4,
+    xlim = c(-1.6, -1),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 5 * x + 21.7,
+    xlim = c(-3.5335, -3.2754),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 1.2 * x + 9.25,
+    xlim = c(-3.278, -2.607),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -5.5 * x - 15.4,
+    xlim = c(-3.5334, -2.8),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -2.59 * x - 7.25,
+    xlim = c(-2.8, -2.24),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) sqrt(3 * x * 6 + 127),
+    ylim = c(0, 6.35),
+    xlim = c(-7.055,-4.89),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -sqrt(3 * x * 11 + 233),
+    ylim = c(-7.5, 0.1),
+    xlim = c(-7.055, -5.41),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 0.8 * x + 10.2,
+    ylim = c(6.35, 7.23),
+    xlim = c(-4.8, -3.8), 
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 0.5 * x + 9.08,
+    ylim = c(7.2, 7.71),
+    xlim = c(-3.8,-2.8),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 0.9 * x + 10.2,
+    ylim = c(7.68, 8.2),
+    xlim = c(-2.8, -2.25),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 0.5 * x + 9.3,
+    ylim = c(8.15, 9),
+    xlim = c(-2.25, -0.6),
+    color = "#202020",
+    size = 0.9
+  ) +
+ # stat_function(
+#    fun = function(x) -6,
+#    xlim = c(-2.05, -2.03),
+#    ylim = c(-6, -4.1),
+#    color = "black"
+#  ) +
+ # geom_vline(xintercept = -2.04, ymin = -6, ymax = -4.1, color = "black") +
+  geom_segment(aes(x = -2.04, y = -6, xend = -2.04, yend = -4.1), color = "black") +
+  stat_function(
+    fun = function(x) 5 * x + 5.9,
+    xlim = c(0.36, 0.4),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -1.4 + 1.5 * x,
+    ylim = c(-3.69, -2.4),
+    xlim = c(-1.5, -0.67),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -4.1 - 2.5 * x,
+    ylim = c(-2.43, -1.57),
+    xlim = c(-1, -0.67),
+    color = "black",
+    size = 0.9
+ #   size = 1.5
+  ) +
+  stat_function(
+    fun = function(x) -(-15.2 - x) / (-9),
+    xlim = c(-2.25, -1),
+    color = "black",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -(-16.6 - x) / (-1.5),
+    ylim = c(-7.9, -7.49),
+    xlim = c(-5.359, -4.825),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) (2.89 - x) / (-1.2),
+    xlim = c(-2.02, -1.513),
+    ylim = c(-4.11, -3.66),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) (-14 - x) / (3),
+    xlim = c(-8.26, -6.89),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) (-5.2-x)/ (-1.6),
+    ylim = c(-2.7, -1.93),
+    xlim = c(-9.47,-8.26),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) (-25.5 - x) / (4),
+    xlim = c(-8.22, -6.35),
+    color = "#202020",
+    size = 0.9
+  ) +
+#  stat_function(
+#    fun = function(y) -9.5,
+#    ylim = c(-3.5, -2.688),
+#    color = "lightblue"
+#  ) +
+  geom_segment(aes(x = -9.5, y = -2.7, xend = -9.5, yend = -3.45), color = "black") +
+  stat_function(
+    fun = function(x) (-14.7 - x) / (1.5),
+    xlim = c(-9.5, -8.2),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -1,
+    xlim = c(-7.48, -7.03),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -x - 8.43,
+    xlim = c(-8.2, -7.43),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -(x + 8.1) / -0.3,
+    xlim = c(-8.18, -7.78),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) sqrt(0.55^2 + (-x + 2.5)^2) - 6.3,
+    xlim = c(-3, -2.33),
+    ylim = c(-7, -5),
+    color = "black",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) (x + 12) / 4,
+    xlim = c(-7.8, -6.96),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -sqrt(1 - ((x + 3.7)^2 / 1.2)^2) - 8,
+    xlim = c(-4.83, -2.8),
+    ylim = c(-15, -8),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 6 * x + 8.2,
+    xlim = c(-2.82, -2.69),
+    ylim = c(-8.673, -8),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 6 * x + 20.6,
+    xlim = c(-8.35, -7.89),
+    ylim = c(-4.825, -2.75),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 8 * x + 11.8,
+    ylim = c(-7.36, -6.5),
+    xlim = c(-2.4, -2.33),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) -sqrt((x+0.77)/-0.03),
+    ylim = c(-8.033, -7.34),
+    xlim = c(-2.7, -2.4),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(y) -12 * x - 28.4,
+    ylim = c(-4.1, -1.4),
+    xlim = c(-2.248, -2.025),
+    color = "#202020",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) 1.5 * x + 10,
+    ylim = c(6.1, 7.1),
+    xlim = c(-2.58, -1.96),
+    color = "black",
+    size = 0.9
+  ) +
+  stat_function(
+    fun = function(x) sqrt(0.6^2 - (x + 2.53)^2) + 7.2,
+    xlim = c(-2.7, 15),
+    ylim = c(7.08, 7.8),
+    color = "#202020",
+    size = 0.9
+  ) +
+   stat_function(
+    fun = function(x) sqrt((x + 3.7)^2 / 1.2^2 - 64) - 8,
+    xlim = c(-7.5, 0),
+    ylim = c(-15, 0),
+    color = "#202020",
+    size = 0.9
+  )
+
+# Display the canvas with the function
+print(plot2)
+```
+
+# Shading
+```{r}
+shade1 <- data.frame(
+  x = c(-6.828, -6.89, -8.27, -9.5, -9.5, -8.5, -8, -7.2),
+  y = c(-2.84, -2.37, -1.9, -2.69, -3.46, -3.1, -2.7, -2.68)
+)
+
+shade2 <- data.frame(
+  x = c(-2.17, -1.6, -1.6, -1, -0.7, -1, -2.25),
+  y = c(-2.3, -2.1, -2.3, -2.9, -2.4, -1.6, -1.45)
+)
+
+shade3 <- data.frame(
+  x = c(-7.75, -8.15, -7.5, -7.05, -7),
+  y = c(1.05, -0.25, -0.15, -1, 1.2)
+)
+
+shade_tail <- data.frame(
+  x = c(0.15, 0.33, -0.7, 0.3, 0.35, 1.5, -0.6, -2.15, -1.9, -2.6, -1.5, -1),
+  y = c(6.12, 6.45, 7.4, 7.7, 7.86, 9, 9, 7.7, 7.2, 6.1, 5.93, 6.1)
+)
+
+shade_belly <- data.frame(
+  x = c(-3.5, -4.2, -5, -5.4, -5.56, -5.1, -5.2, -5.6, -5.3, -5.8, -5.8, -5, -4.2, -5, -4.9, -5.7, -6.56, -7.06, -6.989, -6.4, -5.6, -5.3, -4.8, -4.8, -4.7, -4.2, -3.8),
+  y = c(-8.95, -8.4, -7, -7, -6.6, -6, -5, -3.8, -3.5, -2.2, -0.8, 0, 1.2, 3.6, 6.2, 5, 3, 1, -2, -4.8, -7, -7.6, -7.8, -8.3, -8.6, -8.9, -9)
+)
+
+shade4 <- data.frame(
+  x = c(-6.969, -7.17, -7.5, -7, -7.06),
+  y = c(1.25, 1.2, 0, -1, 0)
+)
+
+shade_tail2 <- data.frame(
+  x = c(1.5, -0.1, 0.7, 0.1, 0.1, -1.3, -0.8, -1.3, -0.7, -1.2, -0.6, -0.8, -0.5, 0.15, .31, -0.61, 0.35, 0.47),
+  y = c(9, 9, 8.7, 8.2, 7.9, 7.4, 7.35, 7.15, 7.1, 6.9, 6.7, 6.5, 6.1, 6.1, 6.46, 7.35, 7.7, 8)
+)
+
+plot3 <- plot2 +
+  geom_polygon(
+    data = shade1,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.6,
+ #   color = "#202020"
+  )+
+  geom_polygon(
+    data = shade2,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.6,
+#    color = "#202020"
+  ) +
+  geom_polygon(
+    data = shade3,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.65,
+#    color = "#202020"
+  ) +
+  geom_polygon(
+    data = shade_tail,
+    aes(x = x, y = y),
+    fill = "lightblue",
+    alpha = 0.6,
+    color = "#202020"
+  )  +
+  geom_polygon(
+    data = shade_tail2,
+    aes(x = x, y = y),
+    fill = "darkgrey",
+    alpha = 0.7,
+    color = "#202020"
+  )  +
+  geom_polygon(
+    data = shade_belly,
+    aes(x = x, y = y),
+    fill = "#808080",
+    alpha = 0.75
+  ) +
+  geom_polygon(
+    data = shade4,
+    aes(x = x, y = y),
+    fill = "darkgrey",
+    alpha = 0.8,
+ #   color = "#202020"
+  ) 
+
+plot3
+```
+
+# Blobs
+```{r}
+red1 <- data.frame(
+  x = c(-3.2, -3.8, -4.2, -4.6, -4.5, -3.6, -2.95, -2.33, -2.04, -2.04, -2.8),
+  y = c(-4, -4, -4.45, -5.2, -6.8, -7.3, -7.4, -6.8, -5.99, -4.8, -4.18)
+)
+
+orange1 <- data.frame(
+  x = c(-6.4, -4.6, -3.4, -3.6, -3.1, -3.3, -3.1, -2.6, -2.8, -3.3, -3.15, -3.53, -4, -4.2, -4.7, -6, -6.3,-6.2,  -6.5, -7, -7, -6.6, -6.7, -6.4, -6.83),
+  y = c(-3.55, -3.3, -2, -1.8, -1.45, -1, -0.4, -0.5, 0, 1.6, 1.9, 4.05, 1.25, 1.2, 2.3, 2.9, 2.3, 2, 1.8, 1, -1.2, -1.2, -1.4, -1.6, -2.8)
+)
+
+red2 <- data.frame(
+  x = c(-2.6, -3.3, -3.15, -3.53, -4, -3.6),
+  y = c(-0.5, 1.6, 1.9, 4, 1.32, 0)
+)
+
+red3 <- data.frame(
+  x = c(-4.8, -4.3, -4.42, -4.4, -4.5, -4.4, -4.5, -4.8, -5.6, -5.6, -5.9, -6.3),
+  y = c(2.34, 3, 3.6, 4.1, 4.3, 5.3, 5.1, 5.3, 4.8, 4.3, 4.2, 3.2)
+)
+
+red4 <- data.frame(
+  x = c(-3.8, -4.3, -4.3, -3.9, -3.58, -3.5),
+  y = c(4, 4.4, 5, 5.8, 5, 4.5)
+)
+
+orange2 <- data.frame(
+  x = c(-3.65, -3.6, -3.3, -3.15, -2.6, -2.1, -2.33, -2.5, -2.75, -3.7, -4.6, -4, -3.3, -2.8),
+  y = c(6.3, 5.9, 5.6, 6, 6.5, 7.2, 7.68, 7.55, 7.69, 7.2, 6.5, 6.4, 7, 6.95)
+)
+
+
+plot4 <- plot3 +
+  geom_polygon(
+    data = red1,
+    aes(x = x, y = y),
+    fill = "#660000",
+    alpha = 0.6,
+ #   color = "#660000"
+  ) +
+  geom_polygon(
+    data = orange1,
+    aes(x = x, y = y),
+    fill = "#CA6623",
+    alpha = 0.7,
+  #  color = "#AB551C"
+  ) +
+  geom_polygon(
+    data = red2,
+    aes(x = x, y = y),
+    fill = "#660000",
+    alpha = 0.7,
+   # color = "#660000"
+  ) +
+  geom_polygon(
+    data = red3,
+    aes(x = x, y = y),
+    fill = "#BA434B",
+    alpha = 0.7,
+  #  color = "#660000"
+  ) +
+  geom_polygon(
+    data = red4,
+    aes(x = x, y = y),
+    fill = "#B62F38",
+    alpha = 0.7,
+   # color = "#660000"
+  )+
+  geom_polygon(
+    data = orange2,
+    aes(x = x, y = y),
+    fill = "#D77331",
+    alpha = 0.7,
+ #   color = "#D77331"
+  ) 
+
+plot4
+```
+
+# Eye
+```{r}
+plot5 <- plot4 +
+    stat_function(
+    fun = function(x) {
+      y <- -sqrt(0.3^2 - (x + 5.2)^2) - 6.7
+      return(y)
+    },
+    xlim = c(-10, 0),
+    ylim = c(-13.4, -0.4),
+    color = "black",
+    size = 0.9
+  ) 
+
+plot5
+```
+
+# Save Fishy Image
+```{r}
+library(magick)
+library(cowplot)
+ggsave("fish_white_transparent.png", bg = "transparent")
+
+fish <- image_read("fish_transparent.png")
+fish
+
+fish2 <- image_flop(fish)
+fish2 <- image_flip(fish2)
+fish2
+```
+```{r}
+image_scale(fish, "x500")
+```
+
+
+# Water Background
+
+```{r}
+#Sky (Nebula) data#
+sky <- tibble(x = seq(-15,15, length = 100),
+              y = seq(-15,15, length = 100)) %>%
+  expand.grid() 
+
+#Setting a color palette for the sky in the background
+#sky_pal <- sample(colorRampPalette(c(rep("#000000",3),rep("#1A0539",5), "#c66c92","#836193","#434a73","#439895","#046c8e",rep("#042047",3)))(nrow(sky)))
+sky_pal <- sample(colorRampPalette(c("#FFCCE5", "#FFCCE5","#439895","#046c8e", "#FFE5CC", "#FFE5CC", "#CCFFCC", "#CCE5FF", "#5CBBC6", "#5CB4C6", '#3C6C95', "#046c8e", "#046c8e", "#FFCCE5","#FFCCE5"))(nrow(sky)))
+sky_size <- sample(15:35, nrow(sky), replace = TRUE)
+
+sky_texture <- sky %>%
+  mutate(color = sky_pal,
+         size = sky_size,
+         group = "sky")
+
+plot <- ggplot() +
+  theme_void() +
+  coord_cartesian(xlim = c(-15,15), ylim = c(-15, 15)) +
+  geom_point(data = sky_texture,
+             aes(x=x,y=y, group = group),
+             color = sky_texture$color,
+             size = sky_texture$size,
+             alpha = .035) +
+  theme(panel.background = element_rect(fill = "#86D9F2"))
+
+# Display the blank canvas
+print(plot)
+
+
+```
+
+
+
+# Put it all together
+
+```{r}
+ggdraw() +
+  draw_plot(plot) +
+  draw_image(fish) +
+  draw_image(fish2)
+```
+
+```{r}
+ggsave("fish_water_final.png", bg = "transparent")
+```
+
